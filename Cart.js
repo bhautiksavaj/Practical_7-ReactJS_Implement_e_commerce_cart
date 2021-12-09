@@ -4,8 +4,8 @@ function Cart() {
     { name: "Jeans", qty: 0, price: 200 },
     { name: "Full Sleave T-shirt", qty: 0, price: 300 },
     { name: "Shorts", qty: 0, price: 400 },
-    { name: "honey", qty: 0, price: 500 },
-    { name: "butter", qty: 0, price: 600 },
+    { name: "shoes", qty: 0, price: 500 },
+    { name: "slippers", qty: 0, price: 600 },
   ]);
   var [totalQty, setTotalQty] = React.useState(0);
   var [totalPrice, setTotalPrice] = React.useState(0);
