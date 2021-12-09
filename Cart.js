@@ -1,9 +1,9 @@
 function Cart() {
   const [productsArray, setProductsArray] = React.useState([
-    { name: "milk", qty: 0, price: 100 },
-    { name: "tea", qty: 0, price: 200 },
-    { name: "sugar", qty: 0, price: 300 },
-    { name: "coffee", qty: 0, price: 400 },
+    { name: "T-shirt", qty: 0, price: 100 },
+    { name: "Jeans", qty: 0, price: 200 },
+    { name: "Full Sleave T-shirt", qty: 0, price: 300 },
+    { name: "Shorts", qty: 0, price: 400 },
     { name: "honey", qty: 0, price: 500 },
     { name: "butter", qty: 0, price: 600 },
   ]);
@@ -16,18 +16,12 @@ function Cart() {
     setTotalQty(totalQtyfromArray.reduce((r, t) => r + t));
   }, [productsArray]);
 
-  const handlePlusClick = (index, item) => {
+  const handleClick = (index, qty) => {
     var chnageqty = [...productsArray];
-    chnageqty[index] = { ...chnageqty[index], qty: item.qty + 1 };
+    chnageqty[index] = { ...chnageqty[index], qty: qty };
     setProductsArray(chnageqty);
   };
-  const handleMinusClick = (index, item) => {
-    if (item.qty !== 0) {
-      var chnageqty = [...productsArray];
-      chnageqty[index] = { ...chnageqty[index], qty: item.qty - 1 };
-      setProductsArray(chnageqty);
-    }
-  };
+
   return (
     <div>
       <div>
@@ -39,8 +33,14 @@ function Cart() {
             {item.name} = Price:{item.price} Qty:{item.qty}
           </h2>
           <div>
-            <button onClick={() => handlePlusClick(i, item)}>+</button>
-            <button onClick={() => handleMinusClick(i, item)}>-</button>
+            <button onClick={() => handleClick(i, item.qty + 1)}>+</button>
+            <button
+              onClick={() =>
+                item.qty != 0 ? handleClick(i, item.qty - 1) : null
+              }
+            >
+              -
+            </button>
           </div>
         </div>
       ))}
