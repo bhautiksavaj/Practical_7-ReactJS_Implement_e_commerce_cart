@@ -5,4 +5,4 @@ Implement cart functionality
 Use more than 5 products
 Use function component
 
-codepan link: https://codepen.io/bhavy1208/pen/ZEXQBJe
+[Click here](https://codepen.io/bhavy1208/pen/ZEXQBJe) to open in codepan
